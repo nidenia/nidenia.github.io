@@ -1,0 +1,140 @@
+.footer {
+  &__container {
+    @include adaptive-property(padding-top, 44, 25, 1);
+    @include adaptive-property(padding-bottom, 44, 25, 1);
+
+    display: flex;
+    flex-wrap: wrap-reverse;
+    border-top: 1px solid $accentDark;
+  }
+
+  &__row {
+    display: flex;
+    flex: 0 0 50%;
+  }
+
+  &__col {
+    flex: 0 0 33.3%;
+    padding: 15px;
+    min-width: 176px;
+
+    &--outside {
+      flex: 0 0 25%;
+      min-width: 285px;
+    }
+  }
+
+  &__title {
+    @include title-small;
+
+    margin: 0 0 8px;
+  }
+
+  &__info {
+    @include description;
+
+    padding: 8px 0;
+  }
+
+  &__link {
+    @include description;
+
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+
+  &__icon {
+    margin: 0 8px 0 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__link:hover &__icon {
+    @include filter;
+  }
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__field {
+    @include description-light;
+
+    margin: 0 5px 0 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $accentLight;
+  }
+
+  &__button {
+    @include button;
+    @include button-primary;
+
+    display: flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+  }
+
+  &__icon {
+    @include filter-light;
+
+    width: 20px;
+    height: 20px;
+  }
+
+  &__button:hover &__icon {
+    @include filter;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    &__row {
+      flex: 0 0 100%;
+      flex-direction: column;
+    }
+
+    &__col._init {
+      flex: 0 0 100%;
+      border-top: 1px solid $accentDark;
+    }
+
+    &__title[data-spoiler] {
+      position: relative;
+      margin: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        border: 1px solid $accentDark;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        width: 15px;
+        height: 15px;
+        transform: translateY(-50%) rotate(45deg);
+        transition: transform 0.5s ease;
+      }
+    }
+
+    &__title[data-spoiler]._active {
+      &::before {
+        transform: translateY(-50%) rotate(-135deg);
+      }
+    }
+  }
+}

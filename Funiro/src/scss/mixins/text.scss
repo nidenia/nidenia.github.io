@@ -1,0 +1,40 @@
+// заголовки блоков
+@mixin title-category {
+  @include adaptive-property(font-size, 44, 30, 1);
+
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+// заголовки товаров
+@mixin title-big {
+  @include adaptive-property(font-size, 24, 20, 1);
+
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+// цена товаров и мелкие заголовки
+@mixin title-small {
+  @include adaptive-property(font-size, 20, 17, 1);
+
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+// описание
+@mixin description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $fontColorLight;
+}
+
+// даты постов, старые цены товаров и инпуты
+@mixin description-light {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $fontColorLight;
+}

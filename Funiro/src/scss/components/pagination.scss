@@ -1,0 +1,41 @@
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 10px;
+  width: 11px;
+  height: 11px;
+  background-color: $accentDark;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primaryColor;
+  }
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  position: relative;
+  background-color: $primaryColor;
+}
+
+.swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  border: 1px solid $primaryColor;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+  background-color: $bgDark;
+}
+
+.swiper-scrollbar-drag {
+  background-color: $primaryColor;
+}
+
+.swiper-lazy-preloader {
+  border: 4px solid $primaryColor;
+  border-top-color: transparent;
+}

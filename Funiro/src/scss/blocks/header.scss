@@ -1,0 +1,274 @@
+// <header>
+
+.header {
+  position: fixed;
+  z-index: 15;
+  padding: 25px 0;
+  width: 100%;
+  background: linear-gradient(to right, $bgDark 66%, $bgLight 34%);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    justify-content: space-between;
+  }
+
+  &__link {
+    margin: 0 40px 0 0;
+    padding: 0 0 5px;
+    transition: color 0.3s ease;
+  }
+
+  &__logo {
+    width: 72px;
+    height: 20px;
+  }
+
+  &__mobile-menu {
+    display: none;
+  }
+}
+
+// <nav>
+.nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  &__searchbar {
+    max-width: 473px;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0 40px 0 0;
+  }
+
+  &__link {
+    @include description;
+
+    display: inline-block;
+    padding: 8px 20px;
+    color: $fontColor;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+
+// </nav>
+
+// <searchbar>
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $bgMain;
+
+  &__button {
+    border: 0;
+    padding: 10px;
+    background-color: transparent;
+  }
+
+  &__field {
+    @include description-light;
+
+    padding: 10px 10px 10px 0;
+    width: 100%;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__button:hover &__icon {
+    @include filter;
+  }
+}
+
+// </searchbar>
+
+// <user-nav>
+.user-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  &__item {
+    margin: 0 0 0 32px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__photo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  &__item:hover &__icon {
+    @include filter;
+  }
+}
+
+// </user-nav>
+// </header>
+
+@media (max-width: 992px) {
+  .header {
+    padding: 20px 0;
+
+    &__wrapper {
+      justify-content: space-between;
+    }
+
+    &__link {
+      position: relative;
+      z-index: 5;
+      margin: 0;
+    }
+
+    &__mobile-menu {
+      position: relative;
+      z-index: 5;
+      display: block;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+
+      & span,
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $primaryColor;
+        transition: all 0.3s ease 0s;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        top: 50%;
+        transform: scale(1) translate(0, -50%);
+      }
+
+      // бургер -> крестик
+      &._active span {
+        background-color: $primaryColor;
+        transform: scale(0) translate(0, -50%);
+      }
+
+      &._active::before {
+        top: 50%;
+        background-color: $primaryColor;
+        transform: rotate(-45deg) translate(0, -50%);
+      }
+
+      &._active::after {
+        bottom: 50%;
+        background-color: $primaryColor;
+        transform: rotate(45deg) translate(0, 50%);
+      }
+    }
+  }
+
+  .nav {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: auto;
+    padding: 60px 15px 15px;
+    width: 100%;
+    height: 100vh;
+    min-width: $minWidth + px;
+    max-width: 510px;
+    box-shadow: 0 0 5px 1px $accentDark;
+    background-color: $bgDark;
+    transition: left 0.3s ease;
+
+    &::before {
+      content: "";
+      position: fixed;
+      left: -100%;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 60px;
+      max-width: 500px;
+      background-color: $bgDark;
+      transition: left 0.3s ease;
+    }
+
+    &__searchbar {
+      order: 1;
+      margin: 0 0 15px;
+    }
+
+    &__list:first-child {
+      flex-direction: column;
+      order: 2;
+      margin: 0;
+      width: 100%;
+    }
+
+    &__list:last-child {
+      flex-direction: row-reverse;
+      order: 0;
+      margin: 0 0 15px;
+    }
+
+    &__link {
+      padding: 8px 0;
+      width: 100%;
+      font-size: 20px;
+    }
+
+    &._active {
+      left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  .searchbar {
+    &__field {
+      font-size: 17px;
+    }
+  }
+
+  .user-nav {
+    &__item:last-child {
+      margin: 0;
+    }
+  }
+}

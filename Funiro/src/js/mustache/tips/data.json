@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "picUrl": "./assets/images/tips/tips-1.jpg",
+    "name": "How to create a living room to love",
+    "date": "20 june 2021"
+  },
+  {
+    "id": 2,
+    "picUrl": "./assets/images/tips/tips-2.jpg",
+    "name": "Solution for clean look working space",
+    "date": "15 june 2021"
+  },
+  {
+    "id": 3,
+    "picUrl": "./assets/images/tips/tips-3.jpg",
+    "name": "Make your cooking activity more fun with good setup",
+    "date": "10 june 2021"
+  },
+  {
+    "id": 4,
+    "picUrl": "./assets/images/tips/tips-1.jpg",
+    "name": "How to create a living room to love",
+    "date": "20 june 2021"
+  },
+  {
+    "id": 5,
+    "picUrl": "./assets/images/tips/tips-2.jpg",
+    "name": "Solution for clean look working space",
+    "date": "15 june 2021"
+  },
+  {
+    "id": 6,
+    "picUrl": "./assets/images/tips/tips-3.jpg",
+    "name": "Make your cooking activity more fun with good setup",
+    "date": "10 june 2021"
+  }
+]

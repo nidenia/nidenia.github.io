@@ -1,0 +1,59 @@
+// переменные
+@import "./variables.scss";
+
+// библиотеки и тд.
+@import "./helpers/reset.scss";
+@import "./helpers/swiper-bundle.scss";
+
+// миксины
+@import "./mixins/visually-hidden.scss";
+@import "./mixins/adaptive-property.scss";
+@import "./mixins/font.scss";
+@import "./mixins/filter-color.scss";
+@import "./mixins/text.scss";
+@import "./mixins/buttons.scss";
+
+// шрифты
+@include font("Gilroy", "Gilroy-400", "400", "normal");
+@include font("Gilroy", "Gilroy-500", "500", "normal");
+@include font("Gilroy", "Gilroy-600", "600", "normal");
+@include font("Gilroy", "Gilroy-700", "700", "normal");
+
+// общие стили
+body._lock {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: $maxWidthContainer + px;
+  font-weight: 500;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 15;
+  visibility: hidden;
+}
+
+body._lock .backdrop {
+  visibility: visible;
+}
+
+// компоненты
+@import "./components/pagination.scss";
+
+// блоки
+@import "./blocks/header.scss";
+@import "./blocks/lead.scss";
+@import "./blocks/features.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/inspiration.scss";
+@import "./blocks/tips.scss";
+@import "./blocks/share.scss";
+@import "./blocks/footer.scss";

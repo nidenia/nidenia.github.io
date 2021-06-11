@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "picUrl": "./assets/images/lead/slider-1.jpg",
+    "name": "Vohauss",
+    "description": "Luxury big sofa 2-seat",
+    "price": 19000000
+  },
+  {
+    "id": 2,
+    "picUrl": "./assets/images/lead/slider-2.jpg",
+    "name": "Bohauss",
+    "description": "Luxury big sofa 2-seat",
+    "price": 17000000
+  },
+  {
+    "id": 3,
+    "picUrl": "./assets/images/lead/slider-3.jpg",
+    "name": "Rohauss",
+    "description": "Luxury big sofa 2-seat",
+    "price": 14000000
+  }
+]

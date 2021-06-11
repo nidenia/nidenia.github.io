@@ -1,0 +1,109 @@
+.tips {
+  @include adaptive-property(padding-top, 44, 25, 1);
+  @include adaptive-property(padding-bottom, 44, 25, 1);
+
+  background-color: $bgMain;
+
+  &__title {
+    @include title-category;
+    @include adaptive-property(margin-bottom, 32, 20, 1);
+
+    text-align: center;
+  }
+
+  &__slider {
+    margin: 0 -30px;
+    padding: 0 30px 55px;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__arrow {
+    @include arrow-button;
+    @include arrow-button-light;
+
+    top: 40%;
+
+    &--prev {
+      left: 10px;
+    }
+
+    &--next {
+      right: 10px;
+    }
+  }
+}
+
+.article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__image-box {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 65%;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__info {
+    overflow: hidden;
+    padding: 16px;
+    height: 100%;
+    background-color: $bgMain;
+    transition: all 0.4s ease;
+  }
+
+  &__title {
+    @include title-big;
+
+    margin: 0 0 8px;
+  }
+
+  &__date {
+    @include description-light;
+  }
+
+  &:hover &__info {
+    box-shadow: 0 0 10px 1px $accentDark;
+  }
+}
+
+@media (max-width: 1300px) {
+  .tips {
+    &__slider {
+      margin: 0 -10px;
+      padding: 0 10px 55px;
+    }
+
+    &__arrow {
+      top: 30%;
+
+      &--prev {
+        left: 15px;
+      }
+
+      &--next {
+        right: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.features {
+  @include adaptive-property(padding-top, 88, 40, 1);
+  @include adaptive-property(padding-bottom, 38, 10, 1);
+
+  background-color: $bgMain;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    flex: 0 0 25%;
+    align-items: center;
+    padding: 10px;
+    min-width: 280px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 40px;
+    margin: 0 24px 0 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__title {
+    @include title-small;
+
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @include description;
+  }
+}
+
+@media (max-width: 1150px) {
+  .features {
+    &__item {
+      margin: 5px 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    &__icon {
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .features {
+    &__item {
+      flex: 0 0 50%;
+      flex-direction: column;
+      margin: 0 0 15px;
+      min-width: 225px;
+      text-align: center;
+    }
+
+    &__icon {
+      margin: 0 0 10px;
+    }
+  }
+}

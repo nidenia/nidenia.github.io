@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "picUrl": "./assets/images/catalog/catalog-1.jpg",
+    "name": "Syltherine",
+    "description": "Stylish cafe chair",
+    "priceNew": 2500000,
+    "priceOld": 3500000,
+    "isNew": false
+  },
+  {
+    "id": 2,
+    "picUrl": "./assets/images/catalog/catalog-2.jpg",
+    "name": "Leviosa",
+    "description": "Stylish cafe chair",
+    "priceNew": 2500000,
+    "priceOld": 2500000,
+    "isNew": false
+  },
+  {
+    "id": 3,
+    "picUrl": "./assets/images/catalog/catalog-3.jpg",
+    "name": "Lolito",
+    "description": "Luxury big sofa",
+    "priceNew": 7000000,
+    "priceOld": 14000000,
+    "isNew": false
+  },
+  {
+    "id": 4,
+    "picUrl": "./assets/images/catalog/catalog-4.jpg",
+    "name": "Respira",
+    "description": "Minimalist fan",
+    "priceNew": 500000,
+    "priceOld": 500000,
+    "isNew": true
+  },
+  {
+    "id": 5,
+    "picUrl": "./assets/images/catalog/catalog-5.jpg",
+    "name": "Grifo",
+    "description": "Night lamp",
+    "priceNew": 1500000,
+    "priceOld": 1500000,
+    "isNew": false
+  },
+  {
+    "id": 6,
+    "picUrl": "./assets/images/catalog/catalog-6.jpg",
+    "name": "Muggo",
+    "description": "Small mug",
+    "priceNew": 150000,
+    "priceOld": 150000,
+    "isNew": true
+  },
+  {
+    "id": 7,
+    "picUrl": "./assets/images/catalog/catalog-7.jpg",
+    "name": "Pingky",
+    "description": "Cute bed set",
+    "priceNew": 7000000,
+    "priceOld": 9000000,
+    "isNew": false
+  },
+  {
+    "id": 8,
+    "picUrl": "./assets/images/catalog/catalog-8.jpg",
+    "name": "Potty",
+    "description": "Minimalist flower pot",
+    "priceNew": 500000,
+    "priceOld": 500000,
+    "isNew": true
+  }
+]

@@ -1,0 +1,247 @@
+.our-products {
+  @include adaptive-property(padding-top, 44, 25, 1);
+  @include adaptive-property(padding-bottom, 44, 25, 1);
+
+  background-color: $bgMain;
+
+  &__title {
+    @include title-category;
+    @include adaptive-property(margin-bottom, 32, 20, 1);
+
+    text-align: center;
+  }
+
+  &__slider {
+    @include adaptive-property(margin-bottom, 32, 20, 1);
+  }
+
+  &__button {
+    @include button;
+    @include button-light;
+
+    margin: 0 auto;
+    padding: 12px;
+    width: max-content;
+    min-width: 240px;
+  }
+}
+
+.catalog-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  height: auto;
+  cursor: pointer;
+
+  &__image-box {
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 100%;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    overflow: hidden;
+    padding: 16px;
+    height: 100%;
+    background-color: $accentLight;
+  }
+
+  &__title {
+    @include title-big;
+
+    margin: 0 0 8px;
+  }
+
+  &__description {
+    @include description;
+
+    margin: 0 0 8px;
+  }
+
+  &__price-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__price-new {
+    @include title-small;
+
+    margin: 0 16px 0 0;
+  }
+
+  &__price-old {
+    @include description-light;
+
+    text-decoration: line-through;
+  }
+
+  &__label-box {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+  }
+
+  &__label {
+    @include description;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: $bgMain;
+
+    &--sale {
+      background-color: $labelSale;
+    }
+
+    &--new {
+      background-color: $labelNew;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+    background-color: $productInfoDark;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.8s ease;
+  }
+
+  &__link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &__button-box {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.7s ease;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $bgMain;
+    background-color: transparent;
+
+    &--cart {
+      @include button;
+      @include button-light;
+
+      flex: 0 0 100%;
+      margin: 0 0 24px;
+      border-color: transparent;
+      padding: 12px;
+      width: 100%;
+      text-transform: initial;
+    }
+
+    &--share,
+    &--like {
+      flex: 0 0 50%;
+      font-weight: 600;
+      font-size: 16px;
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  &__icon {
+    @include filter-light;
+
+    margin: 0 8px 0 0;
+    width: 24px;
+    height: 24px;
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &:hover &__overlay {
+    top: 0;
+    opacity: 1;
+  }
+
+  &:hover &__button-box {
+    opacity: 1;
+  }
+
+  &__button:hover &__icon {
+    @include filter;
+  }
+}
+
+@media (pointer: coarse) {
+  .catalog-item {
+    &__overlay {
+      top: 0;
+      background-color: transparent;
+      opacity: 1;
+    }
+
+    &__button-box {
+      top: 0;
+      flex-direction: column;
+      padding: 16px;
+      width: min-content;
+      background: rgba(58, 58, 58, 0.3);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &__button {
+      flex: 0 0 auto;
+      margin: 10px 0;
+      border: none;
+      padding: 0;
+      width: min-content;
+      font-size: 0;
+      line-height: 0;
+      background-color: transparent;
+
+      &:hover {
+        border: none;
+        background-color: transparent;
+      }
+    }
+
+    &__icon {
+      margin: 0;
+      width: 30px;
+      height: 30px;
+
+      &--mobile {
+        display: inline-block;
+      }
+    }
+  }
+}

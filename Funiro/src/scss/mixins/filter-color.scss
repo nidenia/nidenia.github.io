@@ -1,0 +1,7 @@
+@mixin filter {
+  filter: brightness(0) saturate(100%) invert(66%) sepia(53%) saturate(460%) hue-rotate(334deg) brightness(101%) contrast(82%);
+}
+
+@mixin filter-light {
+  filter: invert(100%) sepia(97%) saturate(15%) hue-rotate(212deg) brightness(103%) contrast(100%);
+}

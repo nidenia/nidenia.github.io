@@ -1,0 +1,80 @@
+// обычные кнопки-ссылки
+@mixin button {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+@mixin button-primary {
+  border: 2px solid $primaryColor;
+  color: $bgMain;
+  background-color: $primaryColor;
+
+  &:hover {
+    border: 2px solid $primaryColor;
+    color: $primaryColor;
+    background-color: $bgMain;
+  }
+}
+
+@mixin button-light {
+  border: 2px solid $primaryColor;
+  color: $primaryColor;
+  background-color: $bgMain;
+
+  &:hover {
+    border: 2px solid $primaryColor;
+    color: $bgMain;
+    background-color: $primaryColor;
+  }
+}
+
+// кнопки-стрелки слайдеров
+@mixin arrow-button {
+  margin: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+
+  &::after {
+    font-size: 16px;
+  }
+}
+
+@mixin arrow-button-primary {
+  background-color: $primaryColorOpacity;
+
+  &::after {
+    color: $primaryColor;
+  }
+
+  &:hover {
+    background-color: $primaryColor;
+  }
+
+  &:hover::after {
+    color: $bgMain;
+  }
+}
+
+@mixin arrow-button-light {
+  box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.16);
+  background-color: $bgMain;
+
+  &::after {
+    color: $primaryColor;
+  }
+
+  &:hover {
+    background-color: $primaryColor;
+  }
+
+  &:hover::after {
+    color: $bgMain;
+  }
+}
