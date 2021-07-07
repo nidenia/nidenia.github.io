@@ -18,7 +18,7 @@ var skills = document.querySelectorAll('.skills__item');
 if (links) {
   links.forEach(function (link) {
     link.addEventListener('mouseenter', function () {
-      addSound("./../assets/audio/beep.mp3", 0.4);
+      addSound("./assets/audio/beep.mp3", 0.4);
     });
   });
 }
@@ -31,7 +31,7 @@ if (agents) {
       });
       e.stopPropagation();
       agent.classList.add('_active');
-      addSound("./../assets/audio/choose.mp3", 0.4);
+      addSound("./assets/audio/choose.mp3", 0.4);
     });
   });
 }
@@ -39,7 +39,7 @@ if (agents) {
 if (skills) {
   skills.forEach(function (skill) {
     skill.addEventListener('mouseenter', function () {
-      addSound("./../assets/audio/beep.mp3", 0.4);
+      addSound("./assets/audio/beep.mp3", 0.4);
     });
   });
 }
