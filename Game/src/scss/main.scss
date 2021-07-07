@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 130px 0 50px;
+  min-height: 100vh;
+  background-image: url("./../assets/images/background.png");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__content {
+    position: relative;
+    flex: 0 1 25%;
+  }
+
+  &__slider {
+    flex: 0 1 75%;
+    min-width: 0;
+  }
+
+  &__title {
+    @include adaptive-property("font-size", 150, 60, 1);
+    @include adaptive-property("margin-bottom", 60, 20, 1);
+
+    margin: 0 0 20px;
+    font-family: "Archivo";
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 5px;
+    text-align: center;
+    -webkit-text-stroke: 1px $lightColor;
+    text-transform: uppercase;
+    color: transparent;
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      left: 45%;
+      top: -5%;
+      z-index: 1;
+      margin: 0;
+      transform: rotate(90deg);
+      transform-origin: left;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+.agents-slider {
+  &__container {
+    margin: 0 0 50px;
+    padding: 0 20px;
+
+    & .swiper-wrapper {
+      padding: 0 30px;
+    }
+  }
+}

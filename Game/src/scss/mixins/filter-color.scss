@@ -1,0 +1,7 @@
+@mixin pink-filter {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(65%) saturate(4006%) hue-rotate(330deg) brightness(101%) contrast(100%);
+}
+
+@mixin black-filter {
+  filter: brightness(0) saturate(100%);
+}

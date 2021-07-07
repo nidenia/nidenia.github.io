@@ -1,0 +1,191 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  padding: 20px;
+  width: 100%;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 16px;
+  color: $lightColor;
+  background-color: $darkColor;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    display: inline-block;
+    margin: 0 60px 0 0;
+    padding: 0 60px 0 0;
+    width: 80px;
+    height: 40px;
+    box-sizing: content-box;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background-color: $lightColor;
+    }
+
+    &:hover {
+      @include pink-filter;
+    }
+  }
+}
+
+.menu {
+  &__body {
+    position: fixed;
+    right: -100%;
+    z-index: 100;
+    min-width: 300px;
+    background-color: $darkColor;
+    transition: right 0.3s ease;
+
+    &._active {
+      right: 0;
+      top: 80px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+    right: -150%;
+    padding: 5px 20px;
+    transition: right 0.3s ease;
+
+    &:hover {
+      background-color: $mainColor;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 0;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $lightColor;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  &__button::before {
+    top: 0;
+  }
+
+  &__button::after {
+    bottom: 0;
+  }
+
+  &__button span {
+    top: 50%;
+    transform: scale(1) translate(0, -50%);
+  }
+
+  &__button._active span {
+    transform: scale(0) translate(0, -50%);
+  }
+
+  &__button._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+  }
+
+  &__button._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+  }
+
+  &__button span,
+  &__button::before,
+  &__button::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: $lightColor;
+    transition: all 0.3s ease;
+  }
+
+  &__button::before,
+  &__button::after {
+    content: "";
+  }
+
+  &__body._active &__item {
+    right: 0;
+  }
+
+  @media (max-width: 992px) {
+    @for $i from 1 through 7 {
+      &__item:nth-child(#{$i}) {
+        transition-delay: 0.1s * $i;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    padding: 20px 70px;
+
+    &__container {
+      justify-content: flex-start;
+    }
+  }
+
+  .menu {
+    &__list {
+      flex-direction: row;
+    }
+
+    &__body {
+      position: static;
+    }
+
+    &__item {
+      right: 0;
+      border: 2px solid transparent;
+      padding: 0;
+      transform: skewX(-30deg);
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $mainColor;
+      }
+
+      &--active {
+        background-color: $mainColor;
+      }
+    }
+
+    &__link {
+      margin: 0 10px;
+      padding: 10px;
+      transform: skewX(30deg);
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+}

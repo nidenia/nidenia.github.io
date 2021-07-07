@@ -1,0 +1,86 @@
+.abilities-slider {
+  padding: 0 30px;
+}
+
+.ability {
+  flex: 0 0 280px;
+  clip-path: polygon(15px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 15px);
+  padding: 1px;
+  height: auto;
+  background-color: $darkColor;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    clip-path: polygon(15px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 15px);
+    padding: 15px 30px;
+    height: 100%;
+    background-color: $lightColor;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
+  &__inner {
+    flex: 0 0 60%;
+    padding: 0 15px 0 0;
+
+    &:last-child {
+      position: relative;
+      flex: 0 0 40%;
+      padding: 0;
+      text-align: right;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        width: 110px;
+        height: 110px;
+        background-color: $mainColor;
+      }
+    }
+  }
+
+  &__type {
+    @include adaptive-property("font-size", 30, 20, 1);
+
+    position: absolute;
+    font-family: "Archivo";
+    line-height: 1;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.1;
+  }
+
+  &__title {
+    @include adaptive-property("font-size", 20, 16, 1);
+
+    margin: 16px 0;
+    font-family: "Archivo";
+    line-height: 1;
+    color: $darkColor;
+  }
+
+  &__description {
+    font-family: "Montserrat";
+    font-size: 14px;
+    line-height: 1.3;
+    color: $darkColor;
+  }
+
+  &__image {
+    @include black-filter;
+    @include adaptive-property("width", 128, 100, 1);
+    @include adaptive-property("height", 128, 100, 1);
+
+    padding: 15px;
+  }
+
+  @media (min-width: 550px) {
+    flex: 0 0 450px;
+  }
+}

@@ -1,0 +1,38 @@
+// переменные
+@import "./variable.scss";
+
+// библиотеки и тд.
+@import "./helpers/reset.scss";
+@import "./helpers/swiper-bundle.scss";
+
+// миксины
+@import "./mixins/adaptive-property.scss";
+@import "./mixins/font.scss";
+@import "./mixins/filter-color.scss";
+@import "./mixins/text.scss";
+
+// шрифты
+@include font("Montserrat", "montserrat-400", "woff2", "400", "normal");
+@include font("Montserrat", "montserrat-700", "woff2", "700", "normal");
+@include font("Archivo", "archivo", "woff2", "400", "normal");
+
+// общие стили
+body._lock {
+  overflow: hidden;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  background-color: $mainColor;
+}
+
+@import "./main.scss";
+@import "./tabs.scss";
+@import "./popup.scss";
+@import "./header.scss";
+@import "./agent.scss";
+@import "./abilities.scss";
