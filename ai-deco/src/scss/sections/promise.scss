@@ -1,0 +1,112 @@
+.promise {
+  padding: 10px 0;
+
+  &__container {
+    display: flex;
+  }
+
+  &__image-box {
+    position: relative;
+    flex: 0 0 431px;
+    max-height: 440px;
+
+    &::before {
+      @include adaptive("width", 152, 65, 1);
+      @include adaptive("height", 152, 65, 1);
+      content: "";
+      position: absolute;
+      top: calc(100% - 19px);
+      left: -19px;
+      border: 2px dashed $dark;
+      opacity: 0.3;
+    }
+
+    &::after {
+      @include adaptive("width", 70, 30, 1);
+      @include adaptive("height", 70, 30, 1);
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%);
+      background-color: $dark;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__info {
+    @include adaptive ("margin-left", 190, 50, 1);
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__title {
+    @extend %title-big;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+  }
+
+  &__description {
+    @extend %description;
+    flex: 0 1 432px;
+  }
+}
+
+@media (max-width: 1260px) {
+  .promise {
+    @include adaptive ("padding-top", 10, 140, 1);
+    &__container {
+      padding: 0 18px;
+    }
+
+    &__image-box {      
+      &::before {
+        left: 19px;
+        top: calc(100% - 8px);
+      }
+
+      &::after {
+        transform: translate(0%, 50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .promise {
+    &__container {
+      flex-wrap: wrap;
+    }
+
+    &__image-box {
+      @include adaptive ("margin-bottom", 140, 60, 1);
+      flex: 0 1 100%;
+    }
+
+    &__info {
+      @include adaptive ("min-height", 400, 270, 1);
+    }
+
+    &__title {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    &__description {
+      @include adaptive ("flex-basis", 600, 216, 1);
+      align-self: center;
+    }
+  }
+}

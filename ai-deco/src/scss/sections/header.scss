@@ -1,0 +1,398 @@
+.header {
+  position: relative;
+	width: 100%;
+  background-color: $lightest;
+  overflow: hidden;
+  transition: padding 0.3s linear;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-bottom: 1px solid $light;
+    transform: translateX(-50%);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.5s;
+
+    & img {
+      display: block;
+      width: 146px;
+      height: 139px;
+      object-fit: cover;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 718px;
+  }
+
+  &__burger-wrapper {
+    display: none;
+  }
+
+  &__item {
+    margin: 0 33px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    padding: 10px;
+    color: $darkest;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom: 2px solid $accent;
+      transform: scaleX(0);
+      transform-origin: center right;
+      transition: transform 0.3s linear;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+      transform-origin: center left;
+    }
+  }
+}
+
+.contacts {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  background-color: $darkSecondary;
+
+  &__item {
+    margin: 0 15px 0 0;
+  }
+
+  &__link {
+    display: block;
+    padding: 10px;
+
+    &:hover {
+      @extend %filter;
+    }
+
+    &--phone {
+      margin: 0 48px 0 0;
+      color: $accent;
+      font-size: 18px;
+      white-space: nowrap;
+
+      &:hover {
+        filter: none;
+        color: $lightest;
+      }
+    }
+  }
+}
+
+@media (max-width: 1430px) {
+  .header {
+    &__menu {
+      width: 100%;
+    }
+  }
+
+  .menu {
+    &__body {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      width: 100%;
+    }
+
+    &__nav {
+      flex: 1 1 100%;
+      padding: 15px 0;
+    }
+  }
+
+  .contacts {
+    padding: 15px 18px;
+    width: 100%;
+  }
+
+  /* .menu {
+    &__burger-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 5;
+      position: relative;
+      flex: 0 0 236px;
+    }
+
+    &__burger-text {
+      font-size: 18px;
+    }
+
+    &__burger {
+      position: relative;
+      width: 15px;
+      height: 12px;
+      margin: 0 8px 0 0;
+
+      & span,
+      &::before,
+      &::after {
+        left: 0;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: $darkest;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+
+      ._active & span {
+        transform: scale(0) translate(0px, -50%);
+      }
+
+      ._active &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+      }
+
+      ._active &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+      }
+    }
+
+    &__body {
+      position: fixed;
+      z-index: 2;
+      top: -100%;   
+      background-color: $darkSecondary;
+      min-width: 236px;
+      transition: top 0.3s linear;
+      overflow: auto;
+
+      &._active {
+        top: 138px;
+      }
+    }
+
+    &__nav {
+      flex-direction: column;
+    }
+
+    &__item {
+      margin: 15px;
+    }
+
+    &__link {
+      color: $lightest;
+      font-size: 20px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  } */
+}
+
+@media (max-width: 768px) {
+  .header {
+    position: static;
+
+    &__container {
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 70px;
+    }
+
+    &__logo {
+      position: absolute;
+      & img {
+        width: 125px;
+        height: 118px;
+      }
+    }
+  }
+
+  .menu {
+    justify-content: center;
+
+    &__burger-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 5;
+      position: relative;
+      margin: 0 0 0 125px;
+    }
+
+    &__burger-text {
+      font-size: 18px;
+    }
+
+    &__burger {
+      position: relative;
+      width: 15px;
+      height: 12px;
+      margin: 0 8px 0 0;
+
+      & span,
+      &::before,
+      &::after {
+        left: 0;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: $darkest;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      & span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+
+      ._active & span {
+        transform: scale(0) translate(0px, -50%);
+      }
+
+      ._active &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+      }
+
+      ._active &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+      }
+    }
+
+    &__body {
+      position: fixed;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 70px 0 0 0;
+      z-index: 2;
+      right: -100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 100%;
+      transition: right 0.3s linear;
+      overflow: auto;
+
+      &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 2;
+        width: 100%;
+        height: 70px;
+        background-color: $lightest;
+        transition: right 0.3s linear;
+      }
+
+      &._active {
+        right: 0;
+
+        &::before {
+          right: 0;
+        }
+      }
+    }
+
+    &__nav {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__item {
+      margin: 15px;
+    }
+
+    &__link {
+      color: $lightest;
+      font-size: 20px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .contacts {
+    background-color: transparent;
+    flex-wrap: wrap;
+
+    &__item {
+      &:first-child {
+        flex: 1 0 100%;
+      }
+    }
+  }
+}

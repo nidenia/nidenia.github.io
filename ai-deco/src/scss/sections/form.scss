@@ -1,0 +1,47 @@
+.form {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__input-box {
+    flex: 1 1 100%;
+    margin: 0 20px 0 0;
+  }
+
+  &__input {
+    @extend %description;
+    width: 100%;
+    padding: 12px;
+  }
+
+  &__warning {
+    text-align: left;
+    margin: 5px 0 0 0;
+    color: $accent;
+    height: 22px;
+  }
+
+  &__button-box {
+    padding: 0 7px;
+  }
+
+  &__button {
+    @include button($lightest, $accent);
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+    &__wrapper {
+      display: block;
+    }
+
+    &__input-box {
+      margin: 0 0 20px 0;
+    }
+  }
+}

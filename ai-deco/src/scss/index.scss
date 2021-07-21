@@ -1,0 +1,72 @@
+@import "./fonts";
+@import "./helpers/reset";
+@import "./helpers/swiper.scss";
+@import "./variables";
+@import "./mixins";
+@import "./animation";
+@import "./components";
+@import "./sections/header";
+@import "./sections/lead";
+@import "./sections/promise";
+@import "./sections/personal";
+@import "./sections/modal";
+@import "./sections/form";
+
+html,
+body {
+  font-family: "TTHoves", "Arial", sans-serif;
+  font-weight: 400;
+  background-color: $lightest;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.page {
+  position: relative;
+
+  &::before {
+    @include adaptive("height", 1137, 250, 1);
+    content: "";
+    position: absolute;
+    top: 9.7%;
+    left: 0;
+    width: 100%;
+    background-image: url("./../assets/images/bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media(max-width: 768px) {
+    &::before {
+      background-size: cover;
+      top: 15%;
+    }
+  }
+
+  @media(max-width: 500px) {
+    &::before {
+      top: 20%;
+    }
+  }
+}
+
+.swiper-lazy-preloader {
+  border: 4px solid $accent;
+  border-top-color: transparent;
+}
