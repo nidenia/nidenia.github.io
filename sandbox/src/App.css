@@ -1,0 +1,9 @@
+.sandbox {    
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.field-wrapper {
+  display: flex;
+}
